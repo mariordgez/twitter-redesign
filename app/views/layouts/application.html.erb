@@ -27,7 +27,7 @@
    <nav class="navbar is-info">
   		<div class="navbar-brand">
   		<%= link_to root_path, class: "navbar-item" do %>
-  			<h1 class="title is-5">Twitter</h1>
+				<span class="icon"><i class="fab fa-twitter" aria-hidden="true"></i></span>
   		<% end %>
 			<div class="navbar-burger burger" data-target="navbarExample">
 					<span></span>
@@ -41,22 +41,30 @@
           <div class="navbar-item">
 					<div class="field is-grouped">
 						<p class="control">
-							<%= link_to 'New Tweet', new_tweet_path, class: "button is-info is-inverted" %>
+            	<%= link_to new_tweet_path, class: "button is-info" do %>
+  					  <span class="icon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+  					<% end %>
 						</p>
             <% if user_signed_in? %>
               <p class="control">
-                <%= link_to current_user.email, edit_user_registration_path, class: "button is-info" %>
-              </p>
+              <%= link_to edit_user_registration_path, class: "button is-info" do %>
+  					  <span class="icon"><i class="fas fa-cog" aria-hidden="true"></i></span>
+  					<% end %>
+							</p>
               <p>
-                <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"button is-info" %>
-              </p>
+              <%= link_to destroy_user_session_path, method: :delete, class: "button is-info" do %>
+  					  <span class="icon"><i class="fas fa-sign-out-alt" aria-hidden="true"></i></span>
+  					<% end %>
+							</p>
             <% else %>
             <p class="control">
-              <%= link_to 'Sign In', new_user_session_path, class: "button is-info" %>
-            </p>
+              <%= link_to new_user_session_path, class: "button is-info" do %>
+  					  <span class="icon"><i class="fas fa-sign-in-alt" aria-hidden="true"></i></span>
+  					<% end %>            </p>
 						<p class="control">
-              <%= link_to 'Sign Up', new_user_registration_path, class: "button is-info" %>
-            </p>
+              <%= link_to new_user_registration_path, class: "button is-info" do %>
+  					  <span class="icon"><i class="fas fa-user-plus" aria-hidden="true"></i></span>
+  					<% end %>            </p>
             <% end %>
             </div>
 					</div>
