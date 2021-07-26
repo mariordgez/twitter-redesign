@@ -16,15 +16,13 @@ class FollowingsController < ApplicationController
   end
 
   def destroy
-    
-      @following =
-        current_user.followings.find_by(
-          user_id: current_user.id,
-          following_id: params[:following_id]
-        )
-      @following.destroy
-    end
+    @following =
+      current_user.followings.find_by(
+        user_id: current_user.id,
+        following_id: params[:following_id]
+      ) 
+    @following.destroy
+  
     redirect_to root_path, notice: 'Your follow was successfully removed'
   end
-
 end
