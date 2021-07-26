@@ -1,2 +1,3 @@
-class Tweet < ApplicationRecord
+class Tweet < ApplicationRecordto 
+  belongs_to :user
 end
