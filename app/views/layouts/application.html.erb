@@ -13,7 +13,7 @@
   </head>
 
   <body>
-  <% if flash[:notice] %>
+    <% if flash[:notice] %>
   		<div class="notification is-primary global-notification">
   			<p class="notice"><%= notice %></p>
   		</div>
@@ -25,12 +25,12 @@
   		</div>
   	<% end %>
 		<div class= "columns is-gapless">
-	
-	<%= render 'layouts/menu' %>
-<div class="column">
-<%= render 'layouts/navbar' %>
-    <%= yield %>
-		</div>
+
+	    <%= render 'layouts/menu' %>
+      <div class="column">
+      <%= render 'layouts/navbar' %>
+      <%= yield %>
+		  </div>
 		</div>
   </body>
 </html>

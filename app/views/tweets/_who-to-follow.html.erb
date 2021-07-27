@@ -13,7 +13,7 @@
 			<div class="media-content">
 				<div class="content">
 					<p>
-						<strong><%= user.name %></strong><br>
+  				<strong><%= link_to user.name,  user_path(user), class: "has-text-black"%></strong><br />
 						<small><%= user.username %></small><br>
             <%= link_to 'Follow', add_follow_path(:following_id => user) %>
 

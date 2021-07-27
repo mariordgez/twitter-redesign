@@ -5,9 +5,36 @@
       <%= render 'tweets/my-profile' %>
   </p>
   <ul class="menu-list has-text-info-light">
-    <li><a class= "has-text-info-light">Home</a></li>
-    <li><a class= "has-text-info-light">Profile</a></li>
-     <li><a class= "has-text-info-light">Settings</a></li>
+    <li>
+      <%= link_to root_path, class: "has-text-info-light" do %>
+  	  <span class="icon-text">
+      <span class="icon">
+      <i class="fas fa-home"></i>
+      </span>
+      <span>Home</span>
+      </span>
+  	<% end %>
+    </li>
+    <li>
+    <%= link_to current_user, class: "has-text-info-light" do %>
+  	  <span class="icon-text">
+      <span class="icon">
+      <i class="fas fa-user-alt"></i>
+      </span>
+      <span>Profile</span>
+      </span>
+  	<% end %>
+    </li>
+     <li>
+     <%= link_to edit_user_registration_path, class: "has-text-info-light" do %>
+  	  <span class="icon-text">
+      <span class="icon">
+      <i class="fas fa-cog"></i>
+      </span>
+      <span>Settings</span>
+      </span>
+  	<% end %>
+    </li>
   </ul>
   
 </aside>

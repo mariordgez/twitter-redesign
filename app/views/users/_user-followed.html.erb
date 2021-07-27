@@ -12,7 +12,7 @@
 			<div class="media-content">
 				<div class="content">
 					<p>
-						<strong><%= follow.user.name %></strong><br>
+  				<strong><%= link_to follow.user.name,  user_path(follow.user), class: "has-text-black"%></strong><br />
 						<small><%= follow.user.username %></small><br>
              <% if !(Following.where(following_id: follow.user.id, user_id: @user.id).exists?) and follow.user.id != current_user.id%>
 						<p>
