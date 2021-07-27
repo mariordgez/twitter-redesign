@@ -42,9 +42,10 @@ RSpec.describe 'User', type: :system do
       expect(page).to have_content 'Signed in successfully.'
     end
   end
-  describe 'Create an post process', type: :feature do
+  describe 'Create a tweet process', type: :feature do
     before :each do
       User.create(
+        id:1,
         email: 'user1@example.com',
         password: 'password',
         name: 'user1',
@@ -52,6 +53,8 @@ RSpec.describe 'User', type: :system do
       )
 
       User.create(
+        id:2,
+
         email: 'user2@example.com',
         password: 'password',
         name: 'user2',
@@ -59,6 +62,7 @@ RSpec.describe 'User', type: :system do
       )
 
       User.create(
+        id:3,
         email: 'user3@example.com',
         password: 'password',
         name: 'user3',
@@ -84,7 +88,7 @@ RSpec.describe 'User', type: :system do
       ).to have_content 'You need to sign in or sign up before continuing.'
     end
 
-    it 'Should not have the event displayed since another user is signed in' do
+    it 'Should not have the tweet displayed since another user is signed in' do
       visit user_session_path
       fill_in 'user_email', with: 'user1@example.com'
       fill_in 'Password', with: 'password'
@@ -97,6 +101,7 @@ RSpec.describe 'User', type: :system do
       fill_in 'Password', with: 'password'
       click_button 'Log in'
       click_link('Profile')
+      sleep(3)
 
       expect(page).to_not have_content 'this is a new tweet'
     end
@@ -111,8 +116,9 @@ RSpec.describe 'User', type: :system do
       fill_in 'Compose a new tweet...', with: 'this is a new tweet 5'
       click_button 'Create Tweet'
       click_link('Profile')
+      sleep(3)
 
-      expect(page).to have_content '2'
+      expect(page).to have_content 2
     end
   end
   describe 'Followings', type: :feature do

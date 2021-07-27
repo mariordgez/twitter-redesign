@@ -2,7 +2,7 @@
   <div class="container">
     <div class="columns is-gapless">
     <div class= 'column is-8' >
-<img alt="mario" src=<%= @user.bg_img %> width="100%" class= "bg-image">
+    <%= image_tag(@user.bg_img || 'https://source.unsplash.com/user/erondu/600x200', alt: 'mario', class: 'bg-image') %>
       <%= render 'user-tweets' %>
       </div>
       <div class= 'column'>
