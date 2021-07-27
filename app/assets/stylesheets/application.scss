@@ -18,6 +18,7 @@
 .navbar-brand .title {
   color: white;
 }
+
 .menu {
   height: 100%;
   padding-top: 10px;
@@ -27,6 +28,7 @@
 .menu-list a:hover {
   background-color: #3298dc;
 }
+
 .navbar-item-twit {
   margin-left: 10px;
 }
@@ -37,10 +39,12 @@
     border-radius: 50%;
   }
 }
+
 .bg-image {
   max-height: 200px;
   width: 100%;
 }
+
 .notification:not(:last-child) {
   margin-bottom: 0;
 }
