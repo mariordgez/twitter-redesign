@@ -1,0 +1,15 @@
+	 <% if user_signed_in? %>
+		<div class= "column is-2 ">
+		<aside class="menu has-background-black-ter " >
+  <p class="menu-label">
+      <%= render 'tweets/my-profile' %>
+  </p>
+  <ul class="menu-list has-text-info-light">
+    <li><a class= "has-text-info-light">Home</a></li>
+    <li><a class= "has-text-info-light">Profile</a></li>
+     <li><a class= "has-text-info-light">Settings</a></li>
+  </ul>
+  
+</aside>
+</div>
+<% end%>
