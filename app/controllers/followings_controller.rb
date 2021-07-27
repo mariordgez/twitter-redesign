@@ -3,7 +3,7 @@ class FollowingsController < ApplicationController
     @following =
       current_user.followings.build(
         user_id: current_user.id,
-        following_id: params[:following_id],
+        following_id: params[:following_id]
       )
 
     if @following.save
@@ -20,9 +20,9 @@ class FollowingsController < ApplicationController
       current_user.followings.find_by(
         user_id: current_user.id,
         following_id: params[:following_id]
-      ) 
+      )
     @following.destroy
-  
+
     redirect_to root_path, notice: 'Your follow was successfully removed'
   end
 end

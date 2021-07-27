@@ -58,8 +58,6 @@ RSpec.describe Tweet, type: :model do
   end
 end
 
-
-
 RSpec.describe Following, type: :model do
   context 'User creates a friendship' do
     it 'Should be valid since all validations are true' do

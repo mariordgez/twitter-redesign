@@ -7,7 +7,7 @@ ruby '2.7.0'
 gem 'rails'
 # Use postgresql as the database for Active Record
 gem 'pg'
-#gem 'sqlite3'
+# gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma'
 # Use SCSS for stylesheets
@@ -37,10 +37,10 @@ gem 'wdm' if Gem.win_platform?
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
-gem 'webpacker', '~> 5.4'
-gem 'devise'
 gem 'bulma-rails', '~> 0.9.1'
+gem 'devise'
 gem 'simple_form', '~> 5.1'
+gem 'webpacker', '~> 5.4'
 
 gem 'gravatar_image_tag', '~> 1.2'
 group :development, :test do
@@ -62,12 +62,12 @@ group :development do
   gem 'web-console'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'rubocop'
-  gem 'spring'
-  gem 'spring-watcher-listen'
   gem 'better_errors', '~> 2.9', '>= 2.9.1'
   gem 'guard', '~> 2.18'
   gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
+  gem 'rubocop'
+  gem 'spring'
+  gem 'spring-watcher-listen'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

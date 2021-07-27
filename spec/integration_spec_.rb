@@ -111,7 +111,7 @@ RSpec.describe 'User', type: :system do
       fill_in 'Compose a new tweet...', with: 'this is a new tweet 5'
       click_button 'Create Tweet'
       click_link('Profile')
-      
+
       expect(page).to have_content '2'
     end
   end
@@ -175,7 +175,7 @@ RSpec.describe 'User', type: :system do
       fill_in 'Compose a new tweet...', with: 'this is a new tweet'
       click_button 'Create Tweet'
       first(:link, 'Follow').click
-      
+
       expect(page).to have_content '1'
     end
     it 'Allows you to unfollow someone' do
@@ -192,6 +192,4 @@ RSpec.describe 'User', type: :system do
       expect(page).to have_content 'Your follow was successfully removed'
     end
   end
- 
-  
 end
