@@ -1,4 +1,4 @@
-<div class="column is-half">
+<div class="column">
   <% if user_signed_in? %>
 	<article class="media box">
 		<figure class="media-left">
@@ -23,7 +23,7 @@
   		<div class="media-content">
   			<div class="content">
 				
-  				<strong>    <%= link_to tweet.user.name,  user_path(tweet.user), class: "level-item"%>
+  				<strong>    <%= link_to tweet.user.name,  user_path(tweet.user)%>
 
 			</strong><br />
   				<small><%=tweet.user.username%></small><br/>

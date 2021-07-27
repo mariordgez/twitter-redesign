@@ -11,7 +11,7 @@
 				<div class="media-content">
 					<div class="content">
 						<p>
-							<strong><%= current_user.name %></strong><br />
+							<strong><%= link_to current_user.name,  user_path(current_user), class: "is-dark"%></strong><br />
 							<small><%= current_user.username %></small>
 						</p>
 					</div>
