@@ -21,11 +21,9 @@
   					<% end %>
             
 						</p>
-            	<% elsif follow.user.id != current_user.id %>
+            	<% elsif (Following.where(following_id: follow.user.id, user_id: @user.id).exists?) and follow.user.id != current_user.id %>
               	<p>
-              <%= link_to followings_destroy_path(:following_id => follow.user) do %>
-  					  <span class="icon is-large"><i class="fas fa-minus-circle fa-lg" aria-hidden="true"></i></span>
-  					<% end %>
+               <%= link_to 'Unfollow', followings_destroy_path(:following_id => follow.user) %>
             
 						</p>
             <% end %>
