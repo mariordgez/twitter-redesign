@@ -14,6 +14,20 @@
 				<div class="navbar-end">
           <div class="navbar-item">
 					<div class="field is-grouped">
+					<form action="/search">
+						<div class="field has-addons">
+  						<div class="control">
+    					<input class="input" name='q' type="text" placeholder="Find a user">
+ 					 </div>
+  					<div class="control">
+    				<button class="button is-primary" type='submit' >
+      				Search
+    		
+						</button>
+ 						 </div>
+						</div>
+						</form>
+				
 						<p class="control">
             	<%= link_to new_tweet_path, class: "button is-info" , id: "new-post" do %>
   					  <span class="icon "><i class="fa fa-pencil" aria-hidden="true"></i></span>
