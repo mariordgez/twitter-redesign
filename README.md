@@ -22,10 +22,10 @@ I used Bulma to style this project and it was a really fun experience to do so. 
 
 ## Live Demo
 
-- [Live Demo](https://nameless-waters-51440.herokuapp.com/)
+- [Live Demo](https://intense-river-89846.herokuapp.com/)
 
-- [Video](https://www.loom.com/share/a671d30c3bcd44d4b81e3ccf16319e1c)
-- [Video 2](https://www.loom.com/share/0bf59866dbfa43259054a3aced0b0400)
+- [Video](https://www.loom.com/share/6f9c71b595a24ee09f1036cbaa64fb57)
+
 
 ## Getting Started
 
