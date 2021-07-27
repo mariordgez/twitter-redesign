@@ -1,0 +1,28 @@
+<div class="column">
+	<nav class="panel">
+		<p class="panel-heading">Who to Follow</p>
+	<% @users.each do | user | %>
+	<% if !(Following.where(following_id: user.id, user_id: current_user.id).exists?) %>
+	<div class="panel-block">
+		<article class="media">
+			<div class="media-left">
+				<figure class="image is-32x32">
+						<%= gravatar_image_tag(user.email, size: 64, alt: user.name) %>
+				</figure>
+			</div>
+			<div class="media-content">
+				<div class="content">
+					<p>
+  				<strong><%= link_to user.name,  user_path(user), class: "has-text-black"%></strong><br />
+						<small><%= user.username %></small><br>
+            <%= link_to 'Follow', add_follow_path(:following_id => user) %>
+
+					</p>
+				</div>
+			</div>
+		</article>
+	</div>
+	<% end %>
+  <% end %>
+	</nav>
+</div>
