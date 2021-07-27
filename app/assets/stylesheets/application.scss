@@ -18,7 +18,17 @@
 .navbar-brand .title {
   color: white;
 }
+.menu {
+  height: 100%;
+  padding-top: 10px;
+}
 
+.menu-list a:hover {
+  background-color: #3298dc;
+}
+.navbar-item-twit {
+  margin-left: 10px;
+}
 // round images
 .image {
   border-radius: 50%;

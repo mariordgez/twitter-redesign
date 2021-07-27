@@ -1,8 +1,7 @@
-<div class="column is-one-quarter">
+<div class="column my-0 py-0">
 	<nav class="panel">
-		<p class="panel-heading"> My Profile</p>
 		<div class="panel-block">
-			<article class="media">
+			<article class="media has-text-info-light">
 				<div class="media-left">
 					<figure class="image is-64x64">
 						<%= gravatar_image_tag(current_user.email, size: 64, alt: current_user.name) %>
@@ -11,7 +10,7 @@
 				<div class="media-content">
 					<div class="content">
 						<p>
-							<strong><%= link_to current_user.name,  user_path(current_user), class: "is-dark"%></strong><br />
+							<strong><%= link_to current_user.name,  user_path(current_user), class: "has-text-info-light"%></strong><br />
 							<small><%= current_user.username %></small>
 						</p>
 					</div>
@@ -20,22 +19,17 @@
 		</div>
 		<div class="panel-block">
 			<div class="level is-mobile">
-				<div class="level-item has-centered-text">
-					<div>
-						<p class="heading">Tweets</p>
-						<p class="title is-6"><%= current_user.tweets.count %></p>
-					</div>
-				</div>
-				<div class="level-item has-centered-text">
+		
+				<div class="level-item has-centered-text has-text-info-light">
 					<div>
 						<p class="heading">Following</p>
-						<p class="title is-6"><%= current_user.followings.count %></p>
+						<p class="title is-6 has-text-info-light"><%= current_user.followings.count %></p>
 					</div>
 				</div>
-					<div class="level-item has-centered-text">
+					<div class="level-item has-centered-text has-text-info-light">
 					<div>
 						<p class="heading">Followers</p>
-						<p class="title is-6"><%=current_user.inverse_followings.count %></p>
+						<p class="title is-6 has-text-info-light"><%=current_user.inverse_followings.count %></p>
 					</div>
 				</div>
 			</div>
