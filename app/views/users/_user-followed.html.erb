@@ -1,0 +1,40 @@
+<div class="column">
+	<nav class="panel">
+		<p class="panel-heading">Check 	<%= @user.name%> followers</p>
+	<% @user.inverse_followings.each do | follow | %>
+	<div class="panel-block">
+		<article class="media">
+			<div class="media-left">
+				<figure class="image is-32x32">
+						<%= gravatar_image_tag(follow.user.email, size: 64, alt: follow.user.name) %>
+				</figure>
+			</div>
+			<div class="media-content">
+				<div class="content">
+					<p>
+  				<strong><%= link_to follow.user.name,  user_path(follow.user), class: "has-text-black"%></strong><br />
+						<small><%= follow.user.username %></small><br>
+             <% if !(Following.where(following_id: follow.user.id, user_id: @user.id).exists?) and follow.user.id != current_user.id%>
+						<p>
+              <%= link_to add_follow_path(:following_id => follow.user) do %>
+  					  <span class="icon is-large"><i class="fas fa-plus-circle fa-lg" aria-hidden="true"></i></span>
+  					<% end %>
+            
+						</p>
+            	<% elsif follow.user.id != current_user.id %>
+              	<p>
+              <%= link_to followings_destroy_path(:following_id => follow.user) do %>
+  					  <span class="icon is-large"><i class="fas fa-minus-circle fa-lg" aria-hidden="true"></i></span>
+  					<% end %>
+            
+						</p>
+            <% end %>
+					</p>
+				</div>
+			</div>
+		</article>
+	</div>
+	<% end %>
+ 
+	</nav>
+</div>

@@ -1,0 +1,65 @@
+<div class="column">
+	<nav class="panel">
+		<p class="panel-heading">Profile</p>
+		<div class="panel-block">
+			<article class="media">
+				<div class="media-left">
+					<figure class="image is-64x64">
+						<%= gravatar_image_tag(@user.email, size: 64, alt: @user.name) %>
+					</figure>
+				</div>
+				<div class="media-content">
+					<div class="content">
+						<p>
+							<strong><%= @user.name %></strong><br />
+							<small><%= @user.username %></small>
+						</p>
+					</div>
+				</div>
+				<% if current_user.id != @user.id %>
+        <div class="media-right">
+					<div class="content">
+	          <% if !(Following.where(following_id: @user.id, user_id: current_user.id).exists?) %>
+						<p>
+              <%= link_to add_follow_path(:following_id => @user) do %>
+  					  <span class="icon is-large"><i class="fas fa-plus-circle fa-lg" aria-hidden="true"></i></span>
+  					<% end %>
+            
+						</p>
+            	<% else %>
+              	<p>
+              <%= link_to followings_destroy_path(:following_id => @user) do %>
+  					  <span class="icon is-large"><i class="fas fa-minus-circle fa-lg" aria-hidden="true"></i></span>
+  					<% end %>
+            
+						</p>
+            <% end %>
+					</div>
+				</div>
+				<% end %>
+			</article>
+		</div>
+		<div class="panel-block">
+			<div class="level is-mobile">
+				<div class="level-item has-centered-text">
+					<div>
+						<p class="heading">Tweets</p>
+						<p class="title is-6"><%= @user.tweets.count %></p>
+					</div>
+				</div>
+				<div class="level-item has-centered-text">
+					<div>
+						<p class="heading">Following</p>
+						<p class="title is-6"><%= @user.followings.count %></p>
+					</div>
+				</div>
+					<div class="level-item has-centered-text">
+					<div>
+						<p class="heading">Followers</p>
+						<p class="title is-6"><%=@user.inverse_followings.count %></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+</div>
