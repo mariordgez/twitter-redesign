@@ -6,7 +6,7 @@ This project was intended to put my knowledge of Ruby on Rails module into pract
 
 I used Bulma to style this project and it was a really fun experience to do so. The design I have emulated is by Design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella).
 
-![Login screenshot](app/assets/images/login.png) ![SignUp screenshot](app/assets/images/signuppage.png) ![Home screenshot](app/assets/images/homepage.png) ![UserProfile screenshot](app/assets/images/profilepage.png)
+![Login screenshot](https://github.com/mariordgez/twitter-redesign/blob/4dd3ebfd18e52fd660a116b098a3c385fad92559/app/assets/images/login.png) ![Home screenshot](https://github.com/mariordgez/twitter-redesign/blob/4dd3ebfd18e52fd660a116b098a3c385fad92559/app/assets/images/indexpage.png) ![UserProfile screenshot](https://github.com/mariordgez/twitter-redesign/blob/4dd3ebfd18e52fd660a116b098a3c385fad92559/app/assets/images/myprofile.png)
 
 ## Built With
 
