@@ -2,7 +2,7 @@
 	<nav class="panel">
 		<p class="panel-heading">Check your follows</p>
 	<% @users.each do | user | %>
-	<% if Following.where(following_id: user.id, user_id: current_user.id).exists? %>
+	<% if current_user.following?(user) %>
 	<div class="panel-block">
 		<article class="media">
 			<div class="media-left">

@@ -1,24 +1,27 @@
 <div class="column">
 	<nav class="panel">
 		<p class="panel-heading">Check 	<%= @user.name%> followers</p>
-	<% @user.inverse_followings.each do | follow | %>
+	<% @user.inverse_follows.each do | follow | %>
+		<% if follow != current_user %>
 	<div class="panel-block">
 		<article class="media">
 			<div class="media-left">
 				<figure class="image is-32x32">
-						<%= gravatar_image_tag(follow.user.email, size: 64, alt: follow.user.name) %>
+						<%= gravatar_image_tag(follow.email, size: 64, alt: follow.name) %>
 				</figure>
 			</div>
 			<div class="media-content">
 				<div class="content">
 					<p>
-  				<strong><%= link_to follow.user.name,  user_path(follow.user), class: "has-text-black"%></strong><br />
-						<small><%= follow.user.username %></small><br>
+  				<strong><%= link_to follow.name,  user_path(follow), class: "has-text-black"%></strong><br />
+						<small><%= follow.username %></small><br>
+						 <%= following(follow) %>
 					</p>
 				</div>
 			</div>
 		</article>
 	</div>
+	<% end %>
 	<% end %>
  
 	</nav>
