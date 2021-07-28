@@ -45,7 +45,7 @@ RSpec.describe 'User', type: :system do
   describe 'Create a tweet process', type: :feature do
     before :each do
       User.create(
-        id:1,
+        id: 1,
         email: 'user1@example.com',
         password: 'password',
         name: 'user1',
@@ -53,7 +53,7 @@ RSpec.describe 'User', type: :system do
       )
 
       User.create(
-        id:2,
+        id: 2,
 
         email: 'user2@example.com',
         password: 'password',
@@ -62,7 +62,7 @@ RSpec.describe 'User', type: :system do
       )
 
       User.create(
-        id:3,
+        id: 3,
         email: 'user3@example.com',
         password: 'password',
         name: 'user3',
@@ -115,7 +115,7 @@ RSpec.describe 'User', type: :system do
       fill_in 'Compose a new tweet...', with: 'this is a new tweet 5'
       click_button 'Create Tweet'
       click_link('Profile')
-      
+
       expect(page).to have_content 2
     end
   end
@@ -123,7 +123,7 @@ RSpec.describe 'User', type: :system do
   describe 'Search feature', type: :feature do
     before :each do
       User.create(
-        id:1,
+        id: 1,
         email: 'user1@example.com',
         password: 'password',
         name: 'user1',
@@ -131,7 +131,7 @@ RSpec.describe 'User', type: :system do
       )
 
       User.create(
-        id:2,
+        id: 2,
 
         email: 'user2@example.com',
         password: 'password',
@@ -140,7 +140,7 @@ RSpec.describe 'User', type: :system do
       )
 
       User.create(
-        id:3,
+        id: 3,
         email: 'user3@example.com',
         password: 'password',
         name: 'user3',
@@ -180,9 +180,7 @@ RSpec.describe 'User', type: :system do
       fill_in 'Find a user', with: 'user3'
       click_button 'Search'
       expect(page).to_not have_content 'user2'
-   
     end
-  
   end
   describe 'Followings', type: :feature do
     before :each do
@@ -235,7 +233,7 @@ RSpec.describe 'User', type: :system do
 
       expect(page).to have_content '1'
     end
-   
+
     it 'Displays number of followings' do
       visit user_session_path
       fill_in 'user_email', with: 'user1@example.com'

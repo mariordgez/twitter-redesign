@@ -11,17 +11,20 @@ class User < ApplicationRecord
            class_name: 'Following',
            foreign_key: 'following_id'
   def follows
-       follows_array= followings.map{|following| following.following}
-       follows_array.compact
+    follows_array = followings.map(&:following)
+    follows_array.compact
   end
+
   def inverse_follows
-       inverse_follows_array= inverse_followings.map{|following| following.user }
-       inverse_follows_array.compact
+    inverse_follows_array = inverse_followings.map(&:user)
+    inverse_follows_array.compact
   end
+
   def following?(user)
     follows.include?(user)
   end
+
   def followed?(user)
-       inverse_follows.include?(user)
+    inverse_follows.include?(user)
   end
 end
