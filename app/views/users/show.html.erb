@@ -2,7 +2,11 @@
   <div class="container">
     <div class="columns is-gapless">
     <div class= 'column is-8' >
-    <%= image_tag(@user.bg_img || 'https://source.unsplash.com/user/erondu/600x200', alt: 'mario', class: 'bg-image') %>
+    <% if  asset_exists?(@user.bg_img)%>
+    <%= image_tag(@user.bg_img, alt: 'mario', class: 'bg-image') %>
+      <% else %>
+      <%= image_tag('https://source.unsplash.com/user/erondu/600x200', alt: 'mario', class: 'bg-image') %>
+      <% end %>
       <%= render 'user-tweets' %>
       </div>
       <div class= 'column'>
