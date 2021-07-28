@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'followings/create', to: 'followings#create', as: 'add_follow'
     get 'followings/destroy'
   devise_for :users, :controllers => {registrations: 'registrations'}
-  
+  get 'search', to: 'users#search'
   resources :users, only: %i[show]
   resources :tweets
   root "tweets#index"

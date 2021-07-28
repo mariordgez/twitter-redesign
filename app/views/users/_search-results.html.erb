@@ -1,0 +1,29 @@
+<% @users.each do | user | %>
+  <div class="box">
+  	<article class="media">
+  		<div class="media-left">
+			<p class="image is-64x64">
+						<%= gravatar_image_tag(user.email, size: 64, alt: user.name) %>
+				</p>
+				</figure>
+  		</div>
+  		<div class="media-content">
+  			<div class="content">
+				
+  				<strong><%= link_to user.name,  user_path(user), class: "has-text-black"%></strong><br />
+  				<small><%=user.username%></small><br/>
+          <% if !(Following.where(following_id: user.id, user_id: current_user.id).exists?) %>
+          <p>
+            <%= link_to 'Follow', add_follow_path(:following_id => user) %>
+					</p>
+          <% elsif (Following.where(following_id: user.id, user_id: current_user.id).exists?) %>
+          <p>
+            <%= link_to 'Unfollow', followings_destroy_path(:following_id => user) %>
+					</p>
+          <% end %>
+  			</div>
+  		</div>
+     
+  	</article>
+  </div>
+<% end %>
