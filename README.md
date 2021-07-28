@@ -25,6 +25,7 @@ I used Bulma to style this project and it was a really fun experience to do so. 
 - [Live Demo](https://intense-river-89846.herokuapp.com/)
 
 - [Video](https://www.loom.com/share/6f9c71b595a24ee09f1036cbaa64fb57)
+- [Video 2](https://www.loom.com/share/7364c5f353654c41af4bd4f56c735e30)
 
 ## Getting Started
 
