@@ -101,7 +101,6 @@ RSpec.describe 'User', type: :system do
       fill_in 'Password', with: 'password'
       click_button 'Log in'
       click_link('Profile')
-      sleep(3)
 
       expect(page).to_not have_content 'this is a new tweet'
     end
@@ -116,10 +115,74 @@ RSpec.describe 'User', type: :system do
       fill_in 'Compose a new tweet...', with: 'this is a new tweet 5'
       click_button 'Create Tweet'
       click_link('Profile')
-      sleep(3)
-
+      
       expect(page).to have_content 2
     end
+  end
+
+  describe 'Search feature', type: :feature do
+    before :each do
+      User.create(
+        id:1,
+        email: 'user1@example.com',
+        password: 'password',
+        name: 'user1',
+        username: 'usea1'
+      )
+
+      User.create(
+        id:2,
+
+        email: 'user2@example.com',
+        password: 'password',
+        name: 'user2',
+        username: 'usea2'
+      )
+
+      User.create(
+        id:3,
+        email: 'user3@example.com',
+        password: 'password',
+        name: 'user3',
+        username: 'usea3'
+      )
+    end
+
+    it 'successfully searches for a user' do
+      visit user_session_path
+      fill_in 'user_email', with: 'user1@example.com'
+      fill_in 'Password', with: 'password'
+
+      click_button 'Log in'
+      fill_in 'Find a user', with: 'user3'
+      click_button 'Search'
+      expect(page).to have_content 'user3'
+    end
+
+    it 'successfully finds two users with similar names' do
+      visit user_session_path
+      fill_in 'user_email', with: 'user1@example.com'
+      fill_in 'Password', with: 'password'
+
+      click_button 'Log in'
+      fill_in 'Find a user', with: 'user'
+      click_button 'Search'
+      expect(page).to have_content 'user2'
+      expect(page).to have_content 'user3'
+    end
+
+    it 'should not have user2 on the search results' do
+      visit user_session_path
+      fill_in 'user_email', with: 'user1@example.com'
+      fill_in 'Password', with: 'password'
+
+      click_button 'Log in'
+      fill_in 'Find a user', with: 'user3'
+      click_button 'Search'
+      expect(page).to_not have_content 'user2'
+   
+    end
+  
   end
   describe 'Followings', type: :feature do
     before :each do
@@ -172,6 +235,7 @@ RSpec.describe 'User', type: :system do
 
       expect(page).to have_content '1'
     end
+   
     it 'Displays number of followings' do
       visit user_session_path
       fill_in 'user_email', with: 'user1@example.com'
