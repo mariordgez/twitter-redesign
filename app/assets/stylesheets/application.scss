@@ -46,6 +46,10 @@
   width: 100%;
 }
 
+.words {
+  overflow-wrap: anywhere;
+}
+
 .notification:not(:last-child) {
   margin-bottom: 0;
 }
