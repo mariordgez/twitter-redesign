@@ -26,7 +26,6 @@ I used Bulma to style this project and it was a really fun experience to do so. 
 
 - [Video](https://www.loom.com/share/6f9c71b595a24ee09f1036cbaa64fb57)
 
-
 ## Getting Started
 
 ### Prerequisites
@@ -38,16 +37,22 @@ To get this project up and running locally, you must already have ruby and rails
 - If you don't have **ruby** installed, you can find instructions through this [link](https://www.ruby-lang.org/en/documentation/installation/)
 - If you don't have **node** installed, you can find instructions through this [link](https://nodejs.org/en/download/)
 - If you don't have **yarn** installed, you can find instructions through this [link](https://classic.yarnpkg.com/en/docs/install/)
-- If you don't have **npm** installed, you can find instructions through this [link](https://classic.yarnpkg.com/en/docs/install/)
+- If you don't have **webpacker** installed, you can find instructions through this [link](https://classic.yarnpkg.com/en/docs/install/)
+- If you don't have **npm** installed, you can find instructions through this [link](https://github.com/rails/webpacker)
 - If you don't have **sqlite3** installed, you can find instructions through this [link](https://www.sqlite.org/index.html)
 - Install **Rails** by following instructions [here](https://guides.rubyonrails.org/getting_started.html#creating-a-new-rails-project-installing-rails-installing-rails)
 
+Remember to run bundle install (If you dont have bundler just install it by running 'gem install bundler' in your terminal) once you get your local copy of the repository
+
 **simple steps set up on your local machine**
 
+On your terminal:
+
 ```
-- $ git clone `$ git clone https://github.com/mariordgez/twitter-redesign.git`
+- $ cd [prefered directory to clone this repository]
+- $ git clone https://github.com/mariordgez/twitter-redesign.git
+- $ cd twitter-redesign
 - $ git checkout development
-- Run cd`twitter-redesign`
 - $ bundle install
 - $ rails db:create
 - $ rails db:migrate
